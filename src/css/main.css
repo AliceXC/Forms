@@ -1,0 +1,47 @@
+/* So far not used TODO need to figure out later */
+html, body {
+    width: 100%;
+    font-size: 15ch;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+div#title {
+    font-size: 3ch;
+    text-align: center;
+}
+
+input#title {
+    font-size: 30px;
+    width: 65%;
+    text-align: center;
+    margin: auto;
+    
+}
+
+.form-description {
+    font-size: 1em;
+    margin-left: 20em;
+}
+
+
+
+div#form-title {
+    word-wrap: break-word; 
+    word-break: break-all;
+}
+
+div#input-title {
+    margin-left: 10em;
+    margin-right: 10em;
+    font-size: 2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    text-align: center;
+}
+/*
+input#title:hover {
+}*/
