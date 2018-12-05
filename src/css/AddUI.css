@@ -1,0 +1,45 @@
+/* Add Feature Dropdown List*/
+div#dropdown {
+    width: 10em;
+    text-align: center;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+div#dropdown-button {
+    -webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+    
+    color: white;
+    background-color: royalblue;
+    border-radius: 0.2em;
+    padding: 0.2em 0.3em 0.2em 0.3em;
+    font-size: 1.3em;
+}
+
+div#dropdown:focus {
+    outline: none;
+}
+
+div#dropdown-content {
+    display:none;
+    border-radius: 0.2em;
+    margin-top: 5px;
+    color: black;
+    background-color: white;
+    border-style: solid;
+    border-width: 0.05em;
+    border-color: slategrey;
+}
+
+div.dropdown-item {
+    padding: 0.3em 0em 0.3em 0em;
+}
+
+div.dropdown-item:hover {
+    background-color: silver; 
+}

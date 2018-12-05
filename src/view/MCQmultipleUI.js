@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import "../css/MCQsingleUI.css";
+import "../css/MCQmultipleUI.css";
 
-class MCQsingleUI extends Component{
+class MCQmultipleUI extends Component{
 
     constructor(props){
         super(props);
@@ -16,4 +16,4 @@ class MCQsingleUI extends Component{
     }
 }
 
-export default MCQsingleUI;
+export default MCQmultipleUI;

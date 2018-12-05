@@ -1,0 +1,110 @@
+/* modal set-up*/
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* TODO FIX */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+.icon-close{
+    color: #aaa;
+    float: right;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.modal-btn {
+    font-size: 1em;
+    margin: 0em 0.2em; 
+}
+
+.close:hover,
+.close:focus {
+    color:black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* modal header */
+.modal-header {
+    font-size: 1em;
+    padding: 0.2em 1em;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-title {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/* Modal Body */
+.modal-body {
+    padding: 0em 1em;
+}
+
+.form-group {
+    overflow: auto; /* prevent margin collapse with the parent*/
+}
+
+label[for=MCQ-description] {
+    display: inline-block; /* prevent margin collapse with the parent*/
+    margin-top: 0.6em; 
+    
+}
+
+#MCQ-description{
+    /*overflow: scroll;*/
+    margin: 1em 3px;
+    width: 96%;
+    resize: none;
+    
+}
+
+label[for=single-choice] {
+    margin-right: 0.5em;
+}
+
+div[class=modal-choice-list-container] {
+    margin: 0.5em 0em 1em 0em;
+}
+button#add-choice {
+    margin-bottom: 0.3em;
+}
+
+div[class=modal-choice] {
+    margin-top: 0.3em;
+}
+
+input[class=input-choice] {
+    width: 76%;
+    margin-right: 0.5em;
+    resize: none;
+}
+
+/* Modal Footer */
+.modal-footer {
+    text-align: right;
+    margin: 0.5em 0.8em;
+}
+
+
+/* Add Animation 
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}*/

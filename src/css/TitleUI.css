@@ -1,0 +1,14 @@
+/* title */
+div#Title-container {
+    font-size: 1em;
+    text-align: center;
+}
+
+div#input-title {
+    font-size: 1.75em;
+    width: 60%;
+    text-align: center;
+    margin: auto;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+}
