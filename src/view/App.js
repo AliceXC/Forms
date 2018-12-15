@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../css/App.css';
 import MCQUI from './MCQUI.js';
+import DateUI from './DateUI.js'
 
 class App extends Component{
     constructor(props){
@@ -19,8 +20,10 @@ class App extends Component{
         this.addMCQ = this.addMCQ.bind(this);
         this.handleAddButton = this.handleAddButton.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
+        this.addDate = this.addDate.bind(this);
     }
 
+    // the Title jsx
     Title(){
         return (
             <div className="form-element Title-container" id="form-title">
@@ -31,15 +34,15 @@ class App extends Component{
         );
     }
 
+    // set up max length of title input and prevent entering newlines 
     checkLength(e) {
-        // set up max length of title input and prevent entering newlines 
         if((e.currentTarget.textContent.length > 50 && e.keyCode !== 8)|| (e.keyCode === 13)) {
             e.preventDefault(); 
         }
     }
 
+    // check title format and handle incorrect format
     validateTitle(){
-        // check title format and handle incorrect format
         // 1. trim off 
         let title = document.querySelector("div#input-title");
         title.innerText = title.innerText.trim();
@@ -57,22 +60,31 @@ class App extends Component{
         }
     }
 
+    // holds add buttons for different child elements
     AddElement(){
         return(
             <div id="add-element-container">
                 <span className="add-element" id="add-MCQ" onClick={this.addMCQ}>MCQ</span>
-                <span className="add-element" id="add-date">Date</span>
+                <span className="add-element" id="add-date" onClick={this.addDate}>Date</span>
                 <span className="add-element" id="add-input">Input</span>
                 <span className="add-element" id="add-number">Number</span>
             </div>            
         );
     }
 
+    // add a new MCQ child
     addMCQ(){
         let type = "MCQ";
         this.handleAddButton(type);
     }
 
+    // add a new Date child
+    addDate(){
+        let type = "Date";
+        this.handleAddButton(type);
+    }
+
+    // add a new child element to the array
     async handleAddButton(pType){
         let promise = new Promise((resolve)=>{
             this.setState((prevState)=>({
@@ -93,7 +105,7 @@ class App extends Component{
         await promise;
     }
 
-
+    // triggered by child element to remove itself
     handleDelete(pID){
         this.setState((prevState) => ({
             children: prevState.children.filter(child => child.id !== pID)
@@ -107,9 +119,12 @@ class App extends Component{
                 <this.AddElement />
                 {
                     this.state.children.map((child)=>{
+                        // render child elements based on their types
                         switch(child.type){
                             case 'MCQ':
                                 return(<MCQUI key={child.id} id={child.id} handleDelete={this.handleDelete.bind(this)}/>);
+                            case 'Date':
+                                return(<DateUI key={child.id} id={child.id} handleDelete={this.handleDelete.bind(this)}/>);
                             default:
                                 break;
                         }
