@@ -15,7 +15,7 @@ class TitleUI extends Component {
         this.validateTitle = this.validateTitle.bind(this);
     }
 
-    // TODO add a placeholder "Title"
+    // TODO add a placeholder "Title", add dashed boarder
     render() {
         return (
             <div className="ui-container" id="form-block">

@@ -1,5 +1,11 @@
-/* title */
+
 div#Title-container {
+    /* for old version title */
+    font-size: 1em;
+    text-align: center;
+}
+
+div#form-title {
     font-size: 1em;
     text-align: center;
 }

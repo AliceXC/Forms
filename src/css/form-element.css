@@ -1,0 +1,72 @@
+div.form-element-container {
+    width: 50%;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 1% 6.5% 1% 4%;
+    border-style: dashed;
+    border-color: royalblue;
+    position: relative;
+}
+
+div.form-element-header{
+    font-size: 1.5em;
+    padding-bottom: 0.5em;
+}
+
+span.element-button,span[class=element-type] {
+    position: absolute;
+    margin: auto;
+    text-align: right;
+    border-style: dashed;
+    border-color: royalblue;
+    padding: 0 0.3em;
+    color: gray;
+    font-size: 1em;
+    float: right;
+    font-weight: bold;
+    width: 3.7em;
+    text-align: center;
+}
+
+span.element-button:hover,
+span.element-button:focus {
+    background-clip: padding-box;
+    color:white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+span.remove-button{
+    right: 0;
+    border-right: 0;
+    bottom: 0;
+    border-bottom: 0;    
+}
+
+span.remove-button:hover,
+span.remove-button:focus {
+    background-color: rgba(228, 102, 102, 0.842);
+}
+
+/*
+span.edit-button{
+    top: 0;
+    border-top: 0;
+}
+
+span.edit-button:hover,
+span.edit-button:focus {
+    background-color: rgba(78, 223, 59, 0.842);
+}
+*/
+
+span[class=element-type] {
+    background-color: royalblue(78, 223, 59, 0.842);
+    color: black;
+    top: 0;
+    right: 0;
+    border-top: 0;
+    border-right: 0;
+    cursor: context-menu;
+}

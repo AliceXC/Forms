@@ -1,19 +1,20 @@
 import React, {Component} from 'react';
-import "../css/MCQmodalUI.css"
+import "../css/MCQmodalUI.css";
+import MCQsingleUI from "./MCQsingleUI.js";
+import ReactDOM from "react-dom";
 
 class MCQmodalUI extends Component {
 
     constructor(props){
         super(props);
 
+        // treat this.state as immutable. 
+        // otherwise it could lead to that some lifecycle methods like componentDidUpdate won’t trigger.
         this.state = { 
             question: '',
             typeOfChoices: 'single',
             numOfChoices: 2,
-            choices: [
-                {id:1, content:''},
-                {id:2, content:''},
-            ],
+            choices: [],
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -89,6 +90,9 @@ class MCQmodalUI extends Component {
     // NOTE: use async, await to avoid callAsyncFunc.then({some code...});  (callback hell)
     // Also it is not necessary to handle the return promise from the async addChoice function
     // since it is not returing anything
+    // TODO: improve addChoice() mtd based on 
+    // https://stackoverflow.com/questions/45477583/how-to-add-more-component-dynamically-react-native
+    // try to build a choice array 
     async addChoice() {
         // no more than 10 choices 
         let size = document.querySelector("div.modal-choice-list-container").childElementCount-1;
@@ -123,11 +127,11 @@ class MCQmodalUI extends Component {
             // TODO alert at most 10 choices.
             
         }
-}
+    }
 
     incrementChoiceNumber(){
         return new Promise((resolve) => {
-            this.setState((prevState, props) => ({
+            this.setState((prevState) => ({
                 numOfChoices: prevState.numOfChoices+1
             }));
             resolve();
@@ -168,12 +172,39 @@ class MCQmodalUI extends Component {
             }); 
 
             if(flag1 && flag2){
-                // store description and inputs into one prop
-                // submit the form
-                // exit current modal
-                // call <MCQsingleUI prop/> or <MCQmultipleUI prop/>
+                // WHEN submit the form:
+                // store description and inputs, exit current modal, call <MCQsingleUI prop/> or <MCQmultipleUI prop/>
                 console.log("form valid!!");
+
+                let choiceList = [];
                 
+                document.querySelectorAll("input.input-choice").forEach(input => {
+                    choiceList.push(input.value);
+                });
+
+                let promise = new Promise((resolve)=>{
+                    this.setState({
+                        choices: [...this.state.choices,...choiceList]
+                    });
+                    resolve();
+                });
+                await promise;
+                
+                // to add a new mcq element there are two choices:
+                // 1. call formelementsui(only creates div elements) to create a new div with a specific name/class, 
+                // then render new mcq element to that div (preferred)
+                // 2. call formelementsui with all info that is needed to create a new mcq element, 
+                // in formelementsui create a new div, then render new mcq element
+
+               
+                document.querySelector('div#modal-container').style.display='none';
+                if(this.state.typeOfChoices === "single"){
+                    ReactDOM.render(<MCQsingleUI question={this.state.question} choices={this.state.choices} />, document.querySelector("div#testMCQ"));
+
+                }else{
+                    // ReactDOM.render(<MCQmultipleUI question={this.state.question} choices={this.state.choices} />, document.querySelector("div#testMCQ"));
+                }
+
             }else{
                 console.log("form not valid!!!");
             }
@@ -205,7 +236,8 @@ class MCQmodalUI extends Component {
         let flag = true;
         for(let i=0; i<choiceList.length; i++){
             let element = choiceList[i];
-            let text = element.value.trim();
+            element.value = element.value.trim();
+            let text = element.value;
             if(text === ""){
                 element.style.boxShadow = "0px 0px 5px red";
                 let pos = i+1;

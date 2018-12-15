@@ -1,0 +1,69 @@
+/*  TODO redistribute css files: 
+    This css style can be used by most of form elements 
+    ex: ElementUI
+*/
+div.form-element-container {
+    margin: 2% 15%;
+    padding: 1% 6.5% 1% 4%;
+    border-style: dashed;
+    border-color: royalblue;
+    position: relative;
+}
+
+div.form-element-header{
+    font-size: 1.5em;
+    padding-bottom: 0.5em;
+}
+
+span.element-button {
+    position: absolute;
+    margin: auto;
+    text-align: right;
+    border-style: dashed;
+    border-color: royalblue;
+    padding: 0 0.3em;
+    color: gray;
+    font-size: 1em;
+    float: right;
+    font-weight: bold;
+    width: 3.7em;
+    text-align: center;
+    right: 0;
+    border-right: 0;
+}
+
+span.element-button:hover,
+span.element-button:focus {
+    background-clip: padding-box;
+    color:white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+span.remove-button{
+    bottom: 0;
+    border-bottom: 0;    
+}
+
+span.remove-button:hover,
+span.remove-button:focus {
+    background-color: rgba(228, 102, 102, 0.842);
+}
+
+span.edit-button{
+    top: 0;
+    border-top: 0;
+}
+
+span.edit-button:hover,
+span.edit-button:focus {
+    background-color: rgba(78, 223, 59, 0.842);
+}
+
+label.choice-element {
+    font-size: 1.1em;
+}
+
+input[name="choice"] {
+    margin: 0.7em 0;
+}
