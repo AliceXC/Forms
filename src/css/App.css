@@ -39,3 +39,11 @@ span.add-element {
 span.add-element:hover {
     background-color: rgb(4, 4, 179);
 }
+
+/* question-description*/
+textarea.question-description{
+    /*overflow: scroll;*/
+    margin: 1em 3px;
+    width: 90%;
+    resize: none;
+}

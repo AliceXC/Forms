@@ -1,0 +1,21 @@
+input.input-length {
+    width: 15%;
+    margin-left: 0.5em;
+}
+
+div.input-length-container, div.input-placeholder-container {
+    margin-bottom: 1em;
+}
+
+input.input-placeholder {
+    width: 72%;
+    margin-left: 0.5em;
+}
+
+div.input-placeholder-container {
+    width: 90%;
+}
+
+span.element-type {
+    background-color: rgb(193, 255, 134);
+}

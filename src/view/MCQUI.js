@@ -63,7 +63,7 @@ class MCQUI extends Component{
         return(
             <div className="form-element-body">
                     <div className="form-element-description">
-                        <textarea className="MCQ-description" rows="4" maxLength="300" placeholder="Please enter the question description."></textarea>
+                        <textarea className="question-description" rows="4" maxLength="300" placeholder="Please enter the question description."></textarea>
                     </div>
 
                     <this.ChoiceType />

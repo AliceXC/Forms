@@ -14,7 +14,7 @@ div.form-element-header{
     padding-bottom: 0.5em;
 }
 
-span.element-button,span[class=element-type] {
+span.element-button,span.element-type {
     position: absolute;
     margin: auto;
     text-align: right;
@@ -61,7 +61,7 @@ span.edit-button:focus {
 }
 */
 
-span[class=element-type] {
+span.element-type {
     background-color: royalblue(78, 223, 59, 0.842);
     color: black;
     top: 0;

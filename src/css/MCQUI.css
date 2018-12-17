@@ -1,11 +1,3 @@
-
-textarea.MCQ-description{
-    /*overflow: scroll;*/
-    margin: 1em 3px;
-    width: 90%;
-    resize: none;
-}
-
 label[for=single-choice] {
     margin-right: 0.5em;
 }

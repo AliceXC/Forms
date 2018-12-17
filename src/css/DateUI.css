@@ -1,0 +1,11 @@
+input[class=date-label] {
+    width: 15%;
+}
+
+input[class=date] {
+    width: 25%;
+}
+
+div.date-input {
+    margin-bottom: 1em;
+}

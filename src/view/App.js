@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import '../css/App.css';
 import MCQUI from './MCQUI.js';
-import DateUI from './DateUI.js'
+import DateUI from './DateUI.js';
+import InputUI from './InputUI.js';
+import NumberUI from './NumberUI.js';
 
 class App extends Component{
     constructor(props){
@@ -21,6 +23,8 @@ class App extends Component{
         this.handleAddButton = this.handleAddButton.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
         this.addDate = this.addDate.bind(this);
+        this.addInput = this.addInput.bind(this);
+        this.addNumber = this.addNumber.bind(this);
     }
 
     // the Title jsx
@@ -66,21 +70,33 @@ class App extends Component{
             <div id="add-element-container">
                 <span className="add-element" id="add-MCQ" onClick={this.addMCQ}>MCQ</span>
                 <span className="add-element" id="add-date" onClick={this.addDate}>Date</span>
-                <span className="add-element" id="add-input">Input</span>
-                <span className="add-element" id="add-number">Number</span>
+                <span className="add-element" id="add-input" onClick={this.addInput}>Input</span>
+                <span className="add-element" id="add-number" onClick={this.addNumber}>Number</span>
+                <span className="add-element" id="add-number">List</span>
             </div>            
         );
     }
 
-    // add a new MCQ child
+    // add a new MCQ element
     addMCQ(){
         let type = "MCQ";
         this.handleAddButton(type);
     }
 
-    // add a new Date child
+    // add a new Date element
     addDate(){
         let type = "Date";
+        this.handleAddButton(type);
+    }
+
+    // add a new Input element
+    addInput(){
+        let type = "Input";
+        this.handleAddButton(type);
+    }
+
+    addNumber(){
+        let type = "Number";
         this.handleAddButton(type);
     }
 
@@ -125,6 +141,10 @@ class App extends Component{
                                 return(<MCQUI key={child.id} id={child.id} handleDelete={this.handleDelete.bind(this)}/>);
                             case 'Date':
                                 return(<DateUI key={child.id} id={child.id} handleDelete={this.handleDelete.bind(this)}/>);
+                            case 'Input':
+                                return(<InputUI key={child.id} id={child.id} handleDelete={this.handleDelete.bind(this)}/>);
+                            case 'Number':
+                                return(<NumberUI key={child.id} id={child.id} handleDelete={this.handleDelete.bind(this)}/>);
                             default:
                                 break;
                         }

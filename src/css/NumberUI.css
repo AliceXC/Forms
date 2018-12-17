@@ -1,0 +1,16 @@
+input[class=number-label] {
+    width: 15%;
+}
+
+input.number {
+    width: 15%;
+    margin-right: 1em;
+}
+
+div.number-input {
+    margin-bottom: 1em;
+}
+
+div.number-limit {
+    margin: 1em 0;
+}
