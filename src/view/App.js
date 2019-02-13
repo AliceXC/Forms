@@ -12,6 +12,8 @@ class App extends Component{
         this.state={
             counter: 0,
             children: [
+                // NOTE: setState will trigger render()
+                // thus everytime we add/remove a child element to state, it would immediately show on page.
                 // {id:1, type:'MCQ'},
             ],
         }
